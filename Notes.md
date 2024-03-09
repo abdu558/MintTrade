@@ -1,0 +1,1 @@
+Delete app and make better apps such as index crypto etc

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Chart{% endblock %}
+
+{% block scripts %}
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+  <script>
+
+    $(document).ready(function() {
+        const chart = LightweightCharts.createChart(document.getElementById('chartContainer'), {autoSize:true});
+        const chartOptions = { layout: { textColor: 'black', background: { type: 'solid', color: 'white' } } };
+        // resize the chart to fit the container and be responsive
+        // make resizeobserver avaliable in the global scope
+        
+        const lineSeries = chart.addLineSeries();
+        
+        lineSeries.setData([
+            { time: '2019-04-11', value: 80.01 },
+            { time: '2019-04-12', value: 96.63 },
+            { time: '2019-04-13', value: 76.64 },
+            { time: '2019-04-14', value: 81.89 },
+            { time: '2019-04-15', value: 74.43 },
+            { time: '2019-04-16', value: 80.01 },
+            { time: '2019-04-17', value: 96.63 },
+            { time: '2019-04-18', value: 76.64 },
+            { time: '2019-04-19', value: 81.89 },
+            { time: '2019-04-20', value: 74.43 },
+
+    ]);
+    });
+
+  </script>
+{% endblock scripts %}
+
+{% block content %}
+
+<div class="grid grid-cols-3 gap-4">
+    <div class="col-span-1 bg-white p-4 rounded-md shadow-md">
+      <h2 class="text-lg font-semibold mb-2">Reference Data</h2>
+      <div class="mb-4">
+        <label class="block font-semibold">Company Name</label>
+        <input type="text" class="w-full border border-gray-300 bg-white rounded-md px-2 py-1" placeholder="XXXX-NASDAQ" />
+      </div>
+      <!-- ... rest of the input fields ... -->
+
+    </div>
+  
+    <div class="col-span-2">
+      <!-- <div class="bg-white rounded-md p-4 mb-4 shadow-md">
+        <h2 class="text-lg font-semibold mb-2">Chart</h2>
+            <div id="chartContainer" style="width: 600px; height: 400px;"></div>
+      </div> -->
+
+
+
+
+      <div class="col-span-2">
+        <div class="bg-white rounded-md p-4 mb-4">
+          <h2 class="text-lg font-semibold mb-2">Chart</h2>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center">
+              <span class="text-sm font-semibold mr-2">1D</span>
+              <span class="text-sm font-semibold mr-2">5D</span>
+              <span class="text-sm font-semibold mr-2">1M</span>
+              <span class="text-sm font-semibold mr-2">6M</span>
+              <span class="text-sm font-semibold mr-2">YTD</span>
+              <span class="text-sm font-semibold mr-2">1Y</span>
+              <span class="text-sm font-semibold mr-2">5Y</span>
+              <span class="text-sm font-semibold">MAX</span>
+            </div>
+            <div class="flex items-center">
+              <span class="text-sm font-semibold mr-2">Bars</span>
+              <div class="w-4 h-4 rounded-full bg-green-500"></div>
+            </div>
+          </div>
+          <div class="h-64 bg-gray-200 rounded-md p-4">
+            <!-- Replace with your chart component -->
+            <!-- <p class="text-gray-500">Chart Area</p> -->
+
+            <div id="chartContainer" style="width: 600px; height: 400px;"></div>
+
+          </div>
+        </div>
+
+
+
+
+  
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white rounded-md p-4 shadow-md">
+          <h2 class="text-lg font-semibold mb-2">Gainers</h2>
+          <!-- ... table area ... -->
+        </div>
+        <div class="bg-white rounded-md p-4 shadow-md">
+          <h2 class="text-lg font-semibold mb-2">Decliners</h2>
+          <!-- ... table area ... -->
+        </div>
+        <div class="bg-white rounded-md p-4 shadow-md">
+          <h2 class="text-lg font-semibold mb-2">Most Active By Share Volume</h2>
+          <!-- ... table area ... -->
+        </div>
+        <div class="bg-white rounded-md p-4 shadow-md">
+          <h2 class="text-lg font-semibold mb-2">Most Active By Dollar Volume</h2>
+          <!-- ... table area ... -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

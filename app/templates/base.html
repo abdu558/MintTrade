@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--USE FOR NAVBAR AND REUSABLE PARTS ONLY-->
+<html>
+<head>
+    <title>MintTrade - {% block title%}{%endblock%}</title>
+    <!-- Include Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js""></script>
+</head>
+<body>
+    <div class="container">
+        <!-- <h1>Welcome to the chart!</h1>
+        <p>Here's an example of using Jinja templating:</p> -->
+    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Stocks, Forex, Commodities & Crypto App</title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    
+      </head>
+      <body class="text-text">
+        <div class="flex h-screen">
+          <div class="w-64 shadow-md bg-green-500">
+            <div class="flex flex-col h-full">
+              <div class="p-4">
+                <h1 class="mb-4 text-xl font-bold text-primary">MintTrade [LOGO]</h1>
+                <ul class="space-y-4">
+                  <li><a href="#" class="block rounded-md px-4 py-2 hover:bg-gray-200">Crypto</a></li>
+                  <li><a href="#" class="block rounded-md px-4 py-2 hover:bg-gray-200">Stocks</a></li>
+                  <li><a href="#" class="block rounded-md px-4 py-2 hover:bg-gray-200">Commodities</a></li>
+                  <li><a href="#" class="block rounded-md px-4 py-2 hover:bg-gray-200">Options</a></li>
+                </ul>
+              </div>
+              <div class="p-4 mt-auto">
+                <li class="relative">
+                  <label class="inline-flex cursor-pointer items-center">
+                    <input type="checkbox" value="" class="peer sr-only" checked />
+                    <div class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-4 peer-focus:ring-green-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-green-800"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Advanced</span>
+                  </label>
+                </li>
+              </div>
+            </div>
+          </div>
+    
+          <div class="flex-grow overflow-y-auto px-8 pt-4">
+            <div class="mb-4 flex items-center">
+              <h1 class="mr-4 text-xl font-bold">Stocks</h1>
+              <form class="flex-grow">
+                <label for="search" class="sr-only">Search</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="h-5 w-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <input type="text" id="search" class="block w-full rounded-lg border border-gray-300 bg-white pl-10 pr-4 py-2 text-sm text-gray-700 focus:border-primary focus:ring-primary" placeholder="Search stocks, crypto, etc." />
+                </div>
+              </form>
+            </div>
+            <div class="mt-2 flex space-x-2">
+            <br>
+    
+    
+            <div class="flex items-center bg-green-200 rounded-full p-1">
+              <input type="radio" id="stock" name="asset-type" class="sr-only peer" checked>
+              <label for="stock" class="px-4 py-2 text-sm font-medium rounded-full hover:bg-primary hover:text-white peer-checked:bg-primary peer-checked:text-white">
+                Stock
+              </label>
+            </div>
+            <div class="flex items-center bg-green-200 rounded-full p-1">
+              <input type="radio" id="index" name="asset-type" class="sr-only peer">
+              <label for="index" class="px-4 py-2 text-sm font-medium rounded-full hover:bg-primary hover:text-white peer-checked:bg-primary peer-checked:text-white">
+                Index
+              </label>
+            </div>
+            <div class="flex items-center bg-green-200 rounded-full p-1">
+              <input type="radio" id="mutualfund" name="asset-type" class="sr-only peer">
+              <label for="mutualfund" class="px-4 py-2 text-sm font-medium rounded-full hover:bg-primary hover:text-white peer-checked:bg-primary peer-checked:text-white">
+                Mutual Fund
+              </label>
+            </div>
+            <div class="flex items-center bg-green-200 rounded-full p-1">
+              <input type="radio" id="currency" name="asset-type" class="sr-only peer">
+              <label for="currency" class="px-4 py-2 text-sm font-medium rounded-full hover:bg-primary hover:text-white peer-checked:bg-primary peer-checked:text-white">
+                Currency
+              </label>
+            </div>
+            <div class="flex items-center bg-green-200 rounded-full p-1">
+              <input type="radio" id="futures" name="asset-type" class="sr-only peer">
+              <label for="futures" class="px-4 py-2 text-sm font-medium rounded-full hover:bg-primary hover:text-white peer-checked:bg-primary peer-checked:text-white">
+                Futures
+              </label>
+            </div>
+          </div>
+    <br>
+        {% block content %}
+        {% endblock content %}
+          </div>
+        </div>
+      </body>
+    </html>
+
+
+    {% block scripts %}
+    {% endblock scripts %}    
+
+
+</body>
+</html>
